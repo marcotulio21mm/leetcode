@@ -1,10 +1,11 @@
 class Solution(object):
     def twoSum(self, nums, target):
-        sum = []
-        for i in range(len(nums)):
-            for j in range(i+1, len(nums)):
-                if (nums[i] + nums[j]) == target:
-                    sum = [i, j]
-                    
-        return sum
-        
+        pairs = {}
+        for i, number in enumerate(nums):
+            comp = target - number
+            
+            if comp not in pairs:
+                pairs[number] = i
+            else:
+                return [pairs[comp], i]
+        return []
