@@ -14,12 +14,17 @@ print(teste.containsDuplicate([1,2,3,4])) ##false
 print(teste.containsDuplicate([1,2,3,4,4])) ##true
 
 
-class Solution(object): ## Solution O(n^2) 
+class SolutionBruteForce(object):
     def containsDuplicate(self, nums):
-       for i in range(len(nums)):
+        for i in range(len(nums)):
             for j in range(len(nums)):
                 if i == j:
                     continue
                 if nums[i] == nums[j]:
                     return True
-            return False
+        return False
+    
+teste2 = SolutionBruteForce()
+    
+print(teste.containsDuplicate([1,2,3,4])) ##false
+print(teste.containsDuplicate([1,2,3,4,4])) ##true
